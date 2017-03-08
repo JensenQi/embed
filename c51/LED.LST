@@ -1,4 +1,4 @@
-C51 COMPILER V8.08   LED                                                                   03/09/2017 00:36:27 PAGE 1   
+C51 COMPILER V8.08   LED                                                                   03/09/2017 01:14:40 PAGE 1   
 
 
 C51 COMPILER V8.08, COMPILATION OF MODULE LED
@@ -8,22 +8,34 @@ COMPILER INVOKED BY: C:\Keil\C51\BIN\C51.EXE LED.c BROWSE DEBUG OBJECTEXTEND
 line level    source
 
    1          #include <reg52.h>
-   2          
-   3          sbit LED = P1^0;
-   4          
-   5          void main(){
-   6   1              while(1){
-   7   2                      LED = 0;
-   8   2              }
-   9   1      }
+   2          sbit RED_LED = P1^0;
+   3          sbit GREEN_LED = P1^1;
+   4          sbit YELLOW_LED = P1^2;
+   5          sbit BLUE_LED = P1^3;
+   6          sbit SWITCH_3 = P3^0;
+   7          sbit SWITCH_4 = P3^1;
+   8          sbit SWITCH_5 = P3^2;
+   9          sbit SWITCH_6 = P3^3;
+  10          
+  11          
+  12          
+  13          void main(){
+  14   1          int red_is_light = 0;
+  15   1          while(1){
+  16   2                      RED_LED = SWITCH_3;
+  17   2              GREEN_LED = SWITCH_4;
+  18   2              YELLOW_LED = SWITCH_5;
+  19   2              BLUE_LED = SWITCH_6;
+  20   2          }
+  21   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =      4    ----
+   CODE SIZE        =     23    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----
-   DATA SIZE        =   ----    ----
+   DATA SIZE        =   ----       2
    IDATA SIZE       =   ----    ----
    BIT SIZE         =   ----    ----
 END OF MODULE INFORMATION.
